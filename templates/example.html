@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+{{ style }}
+  </style>
+</head>
+
+<body>
+{% for entry in journal_entries %}
+  <h1>Unit: {% if entry.user_unit_name %}{{ entry.user_unit_name }} ({{ entry.unit_name }}){% else %}{{ entry.unit_name }}{% endif %}</h1>
+  <h2>{{ entry.priority }}: {{ entry.message }}</h1>
+  <h2>Command: {{ entry.cmdline }}</h2>
+  <p>{{ entry.timestamp }}</p>
+{% endfor %}
+</body>
+
+
+</html>
